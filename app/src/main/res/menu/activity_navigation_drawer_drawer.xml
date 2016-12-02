@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/messages"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Message" />
+        <item
+            android:id="@+id/nav_budget"
+            android:icon="@drawable/cash"
+            android:title="Budget" />
+        <item
+            android:id="@+id/nav_myexpenses"
+            android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+            android:title="MyExpenses" />
+        <item
+            android:id="@+id/nav_note"
+            android:icon="@drawable/ic_description_black_24dp"
+            android:title="Note" />
+        <item
+            android:id="@+id/nav_charts"
+            android:icon="@drawable/ic_show_chart_black_24dp"
+            android:title="Charts" />
+
+    </group>
+
+
+
+</menu>

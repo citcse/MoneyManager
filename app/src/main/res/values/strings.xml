@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MoneyManager</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="catlist">
+        <item name="total_budget">My Budget</item>
+        <item name="food">FOOD</item>
+        <item name="education">EDUCATION</item>
+        <item name="eb">EB</item>
+        <item name="loans">LOANS</item>
+        <item name="rent">RENT</item>
+        <item name="fuel">FUEL</item>
+        <item name="travel">TRAVEL</item>
+        <item name="shopping">SHOPPING</item>
+        <item name="fare">FARE</item>
+        <item name="medical">MEDICAL</item>
+        <item name="clothes">CLOTHES</item>
+        <item name="recharge">RECHARGE</item>
+        <item name="internet payment">INTERNET PAYMENT</item>
+        <item name="others">OTHERS</item>
+    </string-array>
+</resources>
