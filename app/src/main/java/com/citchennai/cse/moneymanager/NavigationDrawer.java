@@ -1,6 +1,8 @@
 package com.citchennai.cse.moneymanager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -13,6 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.content.Intent.EXTRA_SUBJECT;
 
 public class NavigationDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,7 +29,7 @@ public class NavigationDrawer extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         View header=navigationView.getHeaderView(0);
         TextView name = (TextView) header.findViewById(R.id.displayname);
@@ -43,14 +48,24 @@ public class NavigationDrawer extends AppCompatActivity
         Fragment fragment=new Messages();
         ft.replace(R.id.content_navigation_drawer, fragment);
         ft.commit();
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getApplicationContext(),DatabaseView.class));
-//               // startActivity(new Intent(getApplicationContext(),Form.class));
-//            }
-//        });
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabss);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+               // startActivity(new Intent(getApplicationContext(),DatabaseView.class));
+               // startActivity(new Intent(getApplicationContext(),Form.class));
+                Fragment fragmentss = new Messages();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_navigation_drawer, fragmentss);
+                ft.commit();
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                        getParent(), drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                drawer.setDrawerListener(toggle);
+                toggle.syncState();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -89,8 +104,21 @@ public class NavigationDrawer extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_share:
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, "Money Manager");
+                i.putExtra(Intent.EXTRA_TEXT, "http://www.google.com/");
+                startActivity(Intent.createChooser(i, "Share URL"));
+                return true;
+            case R.id.change_password:
+                startActivity(new Intent(getApplicationContext(),Password_Reset.class));
+                return true;
+            case R.id.logout:
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -127,6 +155,9 @@ public class NavigationDrawer extends AppCompatActivity
 
         case R.id.messages:
             fragment=new Messages();
+            break;
+        case R.id.nav_about:
+            fragment=new About();
 
 break;
     }

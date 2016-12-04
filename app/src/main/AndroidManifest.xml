@@ -4,27 +4,33 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/myme"
+        android:label="MY ME"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.citchennai.cse.moneymanager.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.citchennai.cse.moneymanager.SignUp" />
-        <activity android:name="com.citchennai.cse.moneymanager.SignIn" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".SignIn" />
         <activity
-            android:name="com.citchennai.cse.moneymanager.NavigationDrawer"
+            android:name=".NavigationDrawer"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
 
-            </activity>
-        <activity android:name="com.citchennai.cse.moneymanager.Form" />
-        <activity android:name="com.citchennai.cse.moneymanager.DatabaseView"></activity>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Form" />
+        <activity android:name=".DatabaseView" />
+        <activity android:name=".Password_Reset"></activity>
     </application>
 
 </manifest>

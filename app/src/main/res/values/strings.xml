@@ -26,4 +26,18 @@
         <item name="internet payment">INTERNET PAYMENT</item>
         <item name="others">OTHERS</item>
     </string-array>
+    <string-array name="months">
+        <item name="01">JAN</item>
+        <item name="02">FEB</item>
+        <item name="03">MAR</item>
+        <item name="04">APR</item>
+        <item name="05">MAY</item>
+        <item name="06">JUN</item>
+        <item name="07">JULY</item>
+        <item name="08">AUG</item>
+        <item name="09">SEPT</item>
+        <item name="10">OCT</item>
+        <item name="11">NOV</item>
+        <item name="12">DEC</item>
+    </string-array>
 </resources>

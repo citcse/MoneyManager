@@ -37,6 +37,7 @@ public class Reminder extends Fragment {
             @Override
             public void onClick(View view) {
                         boolean insertstatus=database.InsertNote(notes_data.getText().toString());
+                notes_data.setText("");
                 if(insertstatus)
                     Toast.makeText(getContext(), "Succesfully", Toast.LENGTH_SHORT).show();
                 else

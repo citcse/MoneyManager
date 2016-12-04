@@ -17,14 +17,14 @@
     <ImageView
         android:layout_width="136dp"
         android:layout_height="72dp"
-        app:srcCompat="@drawable/expenses"
+        app:srcCompat="@drawable/myme"
         android:id="@+id/imageView" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="MY EXPENSES"
+        android:text="MY ME"
         android:id="@+id/displayname"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="36sp" />

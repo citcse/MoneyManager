@@ -52,7 +52,7 @@ public class Database extends SQLiteOpenHelper {
     public Cursor GetMessage()
     {
         SQLiteDatabase db=this.getWritableDatabase();
-        Cursor result=db.rawQuery("select id,type,delta,cat,text,strftime( '%d-%m-%Y  %H:%m', datee) as datee from "+tables[1],null);
+        Cursor result=db.rawQuery("select id,type,delta,cat,text,strftime( '%d-%m-%Y  %H:%m', datee) as datees from "+tables[1]+" order by datee desc;",null);
         return result;
     }
     public Cursor GetChart(String from)
@@ -113,6 +113,21 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor result=db.rawQuery("select * from "+tables[0],null);
         return result;
+    }
+    public boolean updatepassword(String user_name,String new_password)
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS "+tables[0]);
+        db.execSQL("create table "+tables[0]+" (username TEXT PRIMARY KEY,password TEXT)");
+        ContentValues values=new ContentValues();
+        values.put("username",user_name);
+        values.put("password",new_password);
+        long isInserted=db.insert(tables[0],null,values);
+        if(isInserted==-1)
+            return false;
+        else
+            return true;
+
     }
     public void update()
     {

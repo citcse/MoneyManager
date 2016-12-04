@@ -52,7 +52,7 @@ public class Messages extends Fragment {
         while(result.moveToNext()) {
             if(result.getString(1).equals("0"))
             {
-                st.add("Your's expanse is Rs "+result.getString(2).replace("-","")+"" +
+                st.add("Your's expenses is Rs "+result.getString(2).replace("-","")+"" +
                         "\n" +
                         ""+result.getString(5));
                 ints.add(result.getInt(0));
